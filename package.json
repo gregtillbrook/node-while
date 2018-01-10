@@ -1,0 +1,29 @@
+{
+  "name": "node-while",
+  "version": "1.0.0",
+  "description": "A CLI command to start up a node server, execute another CLI command (while node server is still running) and then exit the node server.",
+  "author": "Greg Tillbrook",
+  "license": "MIT",
+  "bin": {
+    "node-while": "bin/node-while.js"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/jest"
+  },
+  "dependencies": {
+    "commander": "^2.12.2",
+    "consolomatic": "^1.2.3"
+  },
+  "devDependencies": {
+    "express": "^4.16.2",
+    "jest": "^22.0.4",
+    "strip-ansi": "^4.0.0"
+  },
+  "keywords": [
+    "node",
+    "loader",
+    "helper",
+    "cli",
+    "runner"
+  ]  
+}
