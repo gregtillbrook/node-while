@@ -12,7 +12,7 @@
     "node-while": "bin/node-while.js"
   },
   "scripts": {
-    "test": "./node_modules/.bin/jest"
+    "test": "node node_modules/.bin/jest"
   },
   "dependencies": {
     "commander": "^2.12.2",
