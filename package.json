@@ -1,6 +1,6 @@
 {
   "name": "node-while",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A CLI command to start up a node server, execute another CLI command (while node server is still running) and then exit the node server.",
   "author": "Greg Tillbrook",
   "license": "MIT",

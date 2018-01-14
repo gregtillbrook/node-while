@@ -1,10 +1,9 @@
-
 A CLI command to start up a node server, execute another CLI command (while node server is still running) and then exit the node server.
 
-
-[![Build Status](https://travis-ci.org/gregtillbrook/node-while.svg?branch=master)](https://travis-ci.org/gregtillbrook/node-while) 
-[![dependency up-to-dateness](https://david-dm.org/gregtillbrook/node-while.svg)](https://david-dm.org/gregtillbrook/node-while)
-[![Known Vulnerabilities](https://snyk.io/test/github/gregtillbrook/node-while/badge.svg)](https://snyk.io/test/github/gregtillbrook/node-while)
+[![NPM Version][npm-image]][npm-url]
+[![Linux CI Build][travis-image]][travis-url]
+[![Windows CI Build][appveyor-image]][appveyor-url]
+[![Known Vulnerabilities][snyk-image]][snyk-url]
 
 
 # Why on earth would you want that?
@@ -68,3 +67,13 @@ See `node-while -h` for addition params
 # Help, my server code uses babel/typscript
 
 node-while doesnt currently have hooks for transpilers etc. Current recommendation is to transpile code e.g. with babel CLI (as your probably doing for production anyway) and then execute that with node-while. 
+
+
+[npm-image]: https://img.shields.io/npm/v/node-while.svg
+[npm-url]: https://npmjs.org/package/node-while
+[travis-image]: https://img.shields.io/travis/gregtillbrook/node-while/master.svg?label=Linux%20CI%20Build
+[travis-url]: https://travis-ci.org/gregtillbrook/node-while
+[appveyor-image]: https://img.shields.io/appveyor/ci/gregtillbrook/node-while/master.svg?label=Windows%20CI%20Build
+[appveyor-url]: https://ci.appveyor.com/project/gregtillbrook/node-while
+[snyk-image]: https://snyk.io/test/github/gregtillbrook/node-while/badge.svg
+[snyk-url]: https://snyk.io/test/github/gregtillbrook/node-while
