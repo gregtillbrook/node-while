@@ -1,6 +1,9 @@
 var exec = require('child_process').exec;
 var stripAnsi = require('strip-ansi');
 
+var isWin = /^win/.test(process.platform);
+var expectedGoodServerPath = isWin ? 'node-while\\test\\mocks\\good-mock-server.js' : 'node-while/test/mocks/good-mock-server.js';
+var expectedBadServerPath = isWin ? 'node-while\\test\\mocks\\bad-mock-server.js' : 'node-while/test/mocks/bad-mock-server.js';
 
 describe('node-while cli', ()=>{
 
@@ -48,7 +51,7 @@ describe('node-while cli', ()=>{
         var lines = stripAnsi(stdout).split('\n');
 
         expect(lines[0]).toContain('node-while: Loading node server from ');
-        expect(lines[0]).toContain('node-while/test/mocks/good-mock-server.js');
+        expect(lines[0]).toContain(expectedGoodServerPath);
         expect(lines[1]).toEqual('node-while: Node server ready event received. Executing command "echo squanch that squanch"');
         expect(lines[2]).toEqual('squanch that squanch');
         expect(lines[3]).toEqual('node-while: Command completed. Closing node server and exiting.');
@@ -75,7 +78,7 @@ describe('node-while cli', ()=>{
       exec('node ./bin/node-while.js -t "111" -s ./test/mocks/bad-mock-server.js -r "echo squanch that squanch"', function(error, stdout, stderr) {
         //strip off styling/hidden characters so compare is cleaner - we only care about execution order
         expect(stripAnsi(stdout).trim()).toContain('node-while: Loading node server from ');
-        expect(stripAnsi(stdout).trim()).toContain('node-while/test/mocks/bad-mock-server.js"');
+        expect(stripAnsi(stdout).trim()).toContain(expectedBadServerPath);
         expect(stripAnsi(stderr).trim()).toEqual('node-while: Timeout (111ms) expired before node server was ready (or node server failed to emit "ready" event)');
         done();
       });
